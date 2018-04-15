@@ -19,6 +19,10 @@ class LinkedList {
   }
 
   append(val) {
+
+  }
+
+  find(linkedList, index) {
     
   }
 }
