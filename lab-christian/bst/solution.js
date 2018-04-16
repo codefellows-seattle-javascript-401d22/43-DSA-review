@@ -49,4 +49,59 @@ class BST {
     return result;
   }
 
+  findMax() {
+    let current = this.root;
+    while(current.right !== null) {
+      current = current.right;
+    }
+    return current.val;
+  }
+
+  findMin() {
+    let current = this.root;
+    while(current.left !== null) {
+      current = current.left;
+    }
+    return current.val;
+  }
+
+  findNearest(val) {
+    let diff = Math.abs(val - this.root.val)
+    let nearest = this.root;
+    _traverse(this.root)
+    function _traverse(node) {
+      if (Math.abs(val-node.val) < diff) {
+        diff = Math.abs(val-node.val);
+        nearest = node;
+      }
+      if (node.left) _traverse(node.left);
+      if (node.right) _traverse(node.right);
+    }
+    return nearest;
+  }
+  
+  calcHeight() {
+    let heightR = 0
+    let heightL = 0
+    let height;
+    _traverse(this.root)
+    function _traverse(node) {
+      if (node.left) {
+        heightL++;
+        _traverse(node.left);
+      }
+      if(node.right) {
+        heightR++;
+        _traverse(node.right);
+      }
+    }
+    if(heightL>heightR) {
+      height = heightL;
+    } else {
+      height = heightR;
+    }
+    return height;
+  }
+}
+
 }
