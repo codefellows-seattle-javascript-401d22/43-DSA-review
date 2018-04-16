@@ -13,24 +13,40 @@ class BST {
     this.root = null;
   }
 
-  insert(val) {
-    if (val <= this.val) {
-      if (!this.left) this.left = new BST(val)
-      else this.left.insert(val);
-    } else if (val > this.value) {
-      if (!this.right) this.right = new BST(val)
-      else this.right.insert(val);
+  insert(node) {
+    if (this.root === null) {
+      this.root = node;
+    } else {
+      this._insert(this.root, node)
+    }
+  }
+
+  _insert(root, node) {
+    if(node.val < root.val) {
+      if(!root.left) {
+        root.left = node;
+      } else {
+        this._insert(root.left, node);
+      }
+    } else {
+      if(!root.right) {
+        root.right = node;
+      } else {
+        this._insert(root.right, node);
+      }
     }
   }
 
   find(val) {
-    if (this.value === val) return true;
-    if (val < this.value) {
-      if (!this.left) return false
-      else return this.left.find(val);
-    } else if (val > this.value) {
-      if (!this.right) return false
-      else return this.right.find(val);
+    let result;
+    _traverse(this.root)
+    function _traverse(node) {
+      if(node.val === val) result=true;
+      if(node.left) _traverse(node.left);
+      if(node.right) _traverse(node.right);
     }
+    if(result !== true) result=false;
+    return result;
   }
+
 }
