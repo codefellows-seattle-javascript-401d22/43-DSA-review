@@ -1,10 +1,16 @@
 'use strict';
 
-class BST {
-  constructor(value) {
-    this.value = value;
+class TreeNode {
+  constructor(val) {
+    this.val = val;
     this.left = null;
     this.right = null;
+  }
+}
+
+class BST {
+  constructor() {
+    this.root = null;
   }
 
   insert(val) {

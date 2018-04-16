@@ -21,14 +21,4 @@ class Queue {
   }
 }
 
-
-let q = new Queue();
-q.enqueue('first');
-q.enqueue('second');
-q.enqueue('third');
-q.enqueue('fourth');
-q.enqueue('fifth');
-
-console.log('My dope queue: ', q)
-
 // dequeue: increment next after pop

@@ -19,18 +19,27 @@ class LinkedList {
   }
 
   append(val) {
-    
+    let newNode = new ListNode(val);
+    let currentNode = this.root;
+    while(currentNode.next) {
+      currentNode = currentNode.next;
+    }
+    currentNode.next = newNode;
   }
 
-  find(linkedList, index) {
-
+  find(index) {
+    let i = 0;
+    let currentNode = this.root;
+    while (currentNode.next !== null) {
+      if (i === index) {
+        return currentNode.data;
+      }
+      currentNode = currentNode.next;
+      i++;
+    }
   }
 }
 
-let myList = new LinkedList();
-myList.prepend(20);
-myList.prepend(30);
-myList.prepend(40);
-console.log(JSON.stringify(myList, null, 2));
+module.exports = { 'LinkedList': LinkedList, 'ListNode': ListNode }
 
 // append, prepend. head(front) tail(end)
