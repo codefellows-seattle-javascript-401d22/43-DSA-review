@@ -104,4 +104,7 @@ class BST {
   }
 }
 
-}
+module.exports = {
+  'TreeNode': TreeNode,
+  'BST': BST
+};

@@ -21,4 +21,8 @@ class Queue {
   }
 }
 
+module.exports = {
+  'Queue': Queue
+};
+
 // dequeue: increment next after pop

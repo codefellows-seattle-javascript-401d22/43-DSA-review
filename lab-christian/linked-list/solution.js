@@ -40,6 +40,9 @@ class LinkedList {
   }
 }
 
-module.exports = { 'LinkedList': LinkedList, 'ListNode': ListNode }
+module.exports = { 
+  'LinkedList': LinkedList, 
+  'ListNode': ListNode
+}
 
 // append, prepend. head(front) tail(end)

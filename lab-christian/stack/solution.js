@@ -1,6 +1,6 @@
 'use strict';
 
-class stackNode {
+class StackNode {
   constructor(val) {
     if (!val) return new Error('expected value');
     this.val = val;
@@ -37,3 +37,8 @@ class Stack {
     return this.top;
   }
 }
+
+module.exports = {
+  'StackNode': StackNode,
+  'Stack': Stack
+};
